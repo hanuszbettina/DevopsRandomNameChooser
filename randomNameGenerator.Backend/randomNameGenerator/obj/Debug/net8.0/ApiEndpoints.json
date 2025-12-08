@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "randomNameGenerator.Controllers.NameController",
+    "Method": "AddTodo",
+    "RelativePath": "Name",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "randomNameGenerator.Models.NameCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "randomNameGenerator.Controllers.NameController",
+    "Method": "GetTodos",
+    "RelativePath": "Name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[randomNameGenerator.Models.NameViewDto, randomNameGenerator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "randomNameGenerator.Controllers.NameController",
+    "Method": "DeleteTodo",
+    "RelativePath": "Name/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\randomnamegenerator.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\randomnamegenerator.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\randomnamegenerator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\randomnamegenerator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\migrations\\20251121164234_migrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\migrations\\20251121164234_migrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\controllers\\namecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\controllers\\namecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\data\\namedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\data\\namedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\models\\name.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\models\\name.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\models\\namecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\models\\namecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\models\\nameviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\models\\nameviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|c:\\users\\user\\desktop\\randomnamegenerator.backend\\randomnamegenerator\\models\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA46ADE6-FF3B-4C2B-AFD9-B1E2BA6EAC3B}|randomNameGenerator\\randomNameGenerator.csproj|solutionrelative:randomnamegenerator\\models\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Properties\\launchSettings.json",
+              "RelativeToolTip": "randomNameGenerator\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-21T21:29:49.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "randomNameGenerator",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\randomNameGenerator.csproj",
+              "RelativeDocumentMoniker": "randomNameGenerator\\randomNameGenerator.csproj",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\randomNameGenerator.csproj",
+              "RelativeToolTip": "randomNameGenerator\\randomNameGenerator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-21T21:27:41.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "randomNameGenerator.http",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\randomNameGenerator.http",
+              "RelativeDocumentMoniker": "randomNameGenerator\\randomNameGenerator.http",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\randomNameGenerator.http",
+              "RelativeToolTip": "randomNameGenerator\\randomNameGenerator.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-21T21:25:18.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\appsettings.json",
+              "RelativeDocumentMoniker": "randomNameGenerator\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\appsettings.json",
+              "RelativeToolTip": "randomNameGenerator\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-21T16:43:45.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20251121164234_Migrations.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Migrations\\20251121164234_Migrations.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Migrations\\20251121164234_Migrations.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Migrations\\20251121164234_Migrations.cs",
+              "RelativeToolTip": "randomNameGenerator\\Migrations\\20251121164234_Migrations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:42:35.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Program.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Program.cs",
+              "RelativeToolTip": "randomNameGenerator\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T16:23:46.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Name.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\Name.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Models\\Name.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\Name.cs",
+              "RelativeToolTip": "randomNameGenerator\\Models\\Name.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:25:52.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NameController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Controllers\\NameController.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Controllers\\NameController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Controllers\\NameController.cs",
+              "RelativeToolTip": "randomNameGenerator\\Controllers\\NameController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:24:54.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NameDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Data\\NameDbContext.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Data\\NameDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Data\\NameDbContext.cs",
+              "RelativeToolTip": "randomNameGenerator\\Data\\NameDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:25:24.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NameCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\NameCreateDto.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Models\\NameCreateDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\NameCreateDto.cs",
+              "RelativeToolTip": "randomNameGenerator\\Models\\NameCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:26:58.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NameViewDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\NameViewDto.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Models\\NameViewDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\NameViewDto.cs",
+              "RelativeToolTip": "randomNameGenerator\\Models\\NameViewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:26:34.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Error.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\Error.cs",
+              "RelativeDocumentMoniker": "randomNameGenerator\\Models\\Error.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\randomNameGenerator.Backend\\randomNameGenerator\\Models\\Error.cs",
+              "RelativeToolTip": "randomNameGenerator\\Models\\Error.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:25:41.163Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
