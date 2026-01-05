@@ -1,39 +1,118 @@
+name: Deploy Backend to Prod
+
 on:
   push:
-    branches:
-      - "master"
+    branches: [ "master" ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./randomNameGenerator.Backend/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/randomnamegenerator-backend:latest
 
-      - name: Deploy on server (atomic symlink switch + systemd restart)
+    env:
+      PROJECT_PATH: randomNameGenerator.Backend/randomNameGenerator/randomNameGenerator.csproj
+      PUBLISH_DIR: publish
+      RUNTIME: linux-x64
+      SELF_CONTAINED: "true"
+
+      REMOTE_BASE: /var/backend
+      REMOTE_RELEASES: /var/backend/releases
+      REMOTE_CURRENT: /var/backend/current
+
+      SERVICE_NAME: winebackend
+
+      FRONTEND_URL: https://randomnamedevops.ddnsfree.com
+      SSH_HOST: randomnamedevops.ddnsfree.com
+      SSH_USER: root
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            nuget-${{ runner.os }}-
+
+      - name: Restore packages
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - name: Publish (Release)
+        run: |
+          dotnet publish ${{ env.PROJECT_PATH }} \
+            -c Release \
+            -r ${{ env.RUNTIME }} \
+            --self-contained ${{ env.SELF_CONTAINED }} \
+            -o ${{ env.PUBLISH_DIR }}
+
+      - name: Compress artifact
+        run: |
+          tar -C ${{ env.PUBLISH_DIR }} -czf app-${{ github.sha }}.tar.gz .
+
+      - name: Add server fingerprint
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "${{ env.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload package via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASS }}
+          source: "app-${{ github.sha }}.tar.gz"
+          target: "/tmp/"
+
+      - name: Deploy on server
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: randomnamedevops.ddnsfree.com
-          username: root
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASS }}
           script: |
-            ./backend_refresh.sh
+            set -euo pipefail
+
+            SERVICE="${{ env.SERVICE_NAME }}"
+            BASE="${{ env.REMOTE_BASE }}"
+            RELEASES="${{ env.REMOTE_RELEASES }}"
+            CURRENT="${{ env.REMOTE_CURRENT }}"
+            TS="$(date +%Y%m%d%H%M%S)-${{ github.sha }}"
+            NEW_RELEASE="${RELEASES}/${TS}"
+
+            sudo mkdir -p "$RELEASES"
+            sudo mkdir -p "$BASE"
+            sudo systemctl stop "$SERVICE" || true
+
+            sudo mkdir -p "$NEW_RELEASE"
+            sudo tar -xzf "/tmp/app-${{ github.sha }}.tar.gz" -C "$NEW_RELEASE"
+            sudo rm "/tmp/app-${{ github.sha }}.tar.gz"
+
+            sudo jq \
+              --arg conn "${{ secrets.DB_CONN }}" \
+              --arg frontend "${{ env.FRONTEND_URL }}" \
+              '.db.conn = $conn | .settings.frontend = $frontend' \
+              "$NEW_RELEASE/appsettings.json" | sudo tee "$NEW_RELEASE/appsettings.json.tmp" > /dev/null
+
+            sudo mv "$NEW_RELEASE/appsettings.json.tmp" "$NEW_RELEASE/appsettings.json"
+
+            sudo ln -sfn "$NEW_RELEASE" "$CURRENT"
+
+            sudo systemctl daemon-reload
+            sudo systemctl start "$SERVICE"
+            sudo systemctl enable "$SERVICE"
+
+            COUNT=$(ls -1dt "$RELEASES"/* | wc -l || true)
+            if [ "$COUNT" -gt 5 ]; then
+              ls -1dt "$RELEASES"/* | tail -n +6 | xargs -r sudo rm -rf
+            fi
+
+            sudo systemctl status "$SERVICE" --no-pager -l || true
