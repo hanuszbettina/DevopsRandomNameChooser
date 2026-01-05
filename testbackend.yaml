@@ -1,0 +1,96 @@
+name: Deploy Test Backend
+
+on:
+  push:
+    branches: [ "develop" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_DIR: randomNameGenerator.Backend/randomNameGenerator/randomNameGenerator.csproj
+      REMOTE_BASE: /var/testbackend
+      REMOTE_RELEASES: /var/testbackend/releases
+      REMOTE_CURRENT: /var/testbackend/current
+      DB_CONN: ${{ secrets.TEST_DB_CONN }}
+      FRONTEND_URL: "https://test.randomnamedevops.ddnsfree.com"
+      SSH_HOST: test.randomnamedevops.ddnsfree.com
+      SSH_USER: root
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.APP_DIR }}
+
+      - name: Build
+        run: dotnet build ${{ env.APP_DIR }} --configuration Release
+
+      - name: Publish
+        run: dotnet publish ${{ env.APP_DIR }} -c Release -o ./publish
+
+      - name: Pack publish
+        run: |
+          tar -czf backend-${{ github.sha }}.tar.gz -C ./publish .
+
+      - name: Add remote host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "${{ env.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload backend via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASS }}
+          source: "backend-${{ github.sha }}.tar.gz"
+          target: "/tmp/"
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASS }}
+          script: |
+            set -euo pipefail
+
+            BASE="${{ env.REMOTE_BASE }}"
+            RELEASES="${{ env.REMOTE_RELEASES }}"
+            CURRENT="${{ env.REMOTE_CURRENT }}"
+            TS="$(date +%Y%m%d%H%M%S)-${{ github.sha }}"
+            NEW_RELEASE="${RELEASES}/${TS}"
+
+            sudo mkdir -p "$RELEASES"
+            sudo mkdir -p "$BASE"
+
+            sudo mkdir -p "$NEW_RELEASE"
+            sudo tar -xzf "/tmp/backend-${{ github.sha }}.tar.gz" -C "$NEW_RELEASE"
+            sudo rm -f "/tmp/backend-${{ github.sha }}.tar.gz"
+
+            # Felülírás appsettings.json connection string
+            sudo sed -i "s#\"conn\": \".*\"#\"conn\": \"${DB_CONN}\"#" "$NEW_RELEASE/appsettings.json"
+
+            if [ -n "${{ secrets.REMOTE_OWNER || '' }}" ]; then
+              sudo chown -R "${{ secrets.REMOTE_OWNER }}" "$BASE"
+            fi
+
+            sudo ln -sfn "$NEW_RELEASE" "$CURRENT"
+
+            COUNT=$(ls -1dt "$RELEASES"/* 2>/dev/null | wc -l || true)
+            if [ "$COUNT" -gt 5 ]; then
+              ls -1dt "$RELEASES"/* | tail -n +6 | xargs -r sudo rm -rf
+            fi
+
+            echo "✅ Test Backend deploy kész."
+            echo "Current -> $(readlink -f "$CURRENT")"
